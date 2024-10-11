@@ -1,0 +1,12 @@
+# Dataset files
+/notebooks/data/*
+
+# Api ignored files
+/api/**/__pycache__/*
+/api/static/*.png
+
+# Website ignored files
+/website/node_modules/
+/website/.angular/
+/website/dist
+/website/.vscode/

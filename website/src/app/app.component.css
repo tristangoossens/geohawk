@@ -1,0 +1,49 @@
+.streetview-image-container {
+    position: relative;
+    min-height: 520px;
+    min-width: 520px;
+    max-height: 520px;
+    max-width: 520px;
+    overflow: hidden;
+    background-color: rgba(128, 128, 128, 0.4);
+
+    .loading {
+        position: absolute; /* Position the loader */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.4; /* Greyscale effect */
+        z-index: 1; /* Ensure the loader is above other content */
+    }
+
+    .spinner-border {
+        z-index: 2; /* Ensure the spinner is above the loading background */
+    }
+}
+
+.map-container {
+    position: absolute;
+    height: 520px;
+    width: 100%;
+}
+
+.map-frame {
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.rounded-background {
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 15px;       /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+  }
+
+.rounded-background h1, .rounded-background h2, .rounded-background p {
+    margin: 10px 0;           /* Space between headings and paragraphs */
+}

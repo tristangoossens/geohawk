@@ -1,0 +1,83 @@
+<div class="row rounded-background ms-2 my-3">
+  <div class="col-3">
+    <div class="text-center">
+      <img src="assets/img/logo2.png" alt="Geohawk logo" class="img-fluid" width="200" height="200">
+      <h1 class="font-weight-bold">Geohawk</h1>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <h2 class="my-0">Play versus GeoHawk</h2>
+    <div class="d-flex">
+      <small class="me-2">Can you beat the model??</small>
+      @switch (currentGameStatus) {
+        @case (gameStatusEnum.LOADING) {
+          <span class="badge bg-secondary">Image loading</span>
+        }
+        @case (gameStatusEnum.READY_TO_GUESS) {
+          <span class="badge bg-primary">Ready to play!</span>
+        }
+        @case (gameStatusEnum.WINNER) {
+          <span class="badge bg-success">You won!</span>
+        }
+        @case (gameStatusEnum.LOSER) {
+          <span class="badge bg-danger">You lost..</span>
+        }
+      }
+    </div>
+    <hr />
+
+    <p>Play by placing clicking on the map where you predict the streetview image is from! After placing a marker you can submit to check whether you won. Good luck!</p>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <!-- Left column block (streetview image) -->
+  <div class="col-12 col-md-4">
+      <div class="streetview-image-container d-flex">
+        @if (currentGameStatus != gameStatusEnum.LOADING) {
+          <img [src]="round!.image_url" alt="Streetview image" class="streetview-image img-fluid">
+        }@else {
+          <div class="spinner-grow text-dark spinner-border m-auto" role="status"></div>
+        }
+      </div>
+  </div>
+
+  <!-- Right column block (map) -->
+  <div class="col-12 col-md-8 position-relative">
+      <div class="map-container">
+        <div class="map-frame">
+          <div id="map"></div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="row mt-3 justify-content-center">
+  <div class="col-12">
+    <!-- 2 buttons on same row -->
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-success" (click)="submitGuess()" [disabled]="!userHasGuessed() || currentGameStatus == gameStatusEnum.LOADING || roundResult != null">Submit Guess</button>
+      <button class="btn btn-primary ms-2" (click)="newRound()" [hidden]="currentGameStatus == gameStatusEnum.LOADING || roundResult == null">Next round</button>
+    </div>
+  </div>
+</div>
+
+<!-- Round result modal -->
+@if(roundResult !== null) {
+  <div class="modal fade" id="roundResultModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ roundResult!.win ? "Congratulations, you won!" : "Too bad, the model won" }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <p>You were {{ roundResult!.userDistance }} km away from the correct location</p>
+          <p>The model was {{ roundResult!.modelDistance }} km away from the correct location</p>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
