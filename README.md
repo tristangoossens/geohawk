@@ -4,7 +4,7 @@
 </div>
 
 ## **Description**
-GeoHawk is a web application that uses a Convolutional Neural Network (CNN) to predict the location of a Google Street View image. The model was trained on a dataset of 50,000 images from 50 different states in the USA. This repository contains notebooks for data exploration, data preparation, and model training. The repo also contains a FastAPI client that serves the model and scrapes new images so you can play against the model. This can be done through the web interface that is built with Angular.
+GeoHawk is a web application that uses a Convolutional Neural Network (CNN) to predict the location of a Google Street View image. The model was trained on a dataset of 15,000 images from 50 different states in the USA. This repository contains notebooks for data exploration, data preparation, and model training. The repo also contains a FastAPI client that serves the model and scrapes new images so you can play against the model. This can be done through the web interface that is built with Angular.
 
 ## **Notebooks**
 To see how the data was prepared and the model was made, you can check the following notebooks:
