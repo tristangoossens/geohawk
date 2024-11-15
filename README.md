@@ -30,7 +30,9 @@ Here are some of the things that I would like to implement in the future:
 - [ ] Train a new model on a panorama image dataset
 
 ## **Demonstration**
-[![Demonstration video](./assets/video-banner.png)](./assets/demonstration-video.mp4)
+<video controls>
+  <source src="./assets/demonstration-video.mp4" type="video/mp4">
+</video>
 
 ## **Sources**
 - [USA States shapefile](https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2023&layergroup=States+%28and+equivalent%29)  
