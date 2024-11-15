@@ -30,9 +30,8 @@ Here are some of the things that I would like to implement in the future:
 - [ ] Train a new model on a panorama image dataset
 
 ## **Demonstration**
-<video controls>
-  <source src="./assets/demonstration-video.mp4" type="video/mp4">
-</video>
+![Demonstration video](./assets/demonstration.gif)  
+> A player battling against the model on the website.
 
 ## **Sources**
 - [USA States shapefile](https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2023&layergroup=States+%28and+equivalent%29)  
