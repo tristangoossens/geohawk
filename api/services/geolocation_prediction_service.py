@@ -56,6 +56,7 @@ class GeolocationPredictionService:
         try:
             image = Image.open(image_path)
             image = image.resize((320, 320))
+            image = image.convert("RGB")
             image_array = np.array(image) / 255.0
             image_array = np.expand_dims(image_array, axis=0)
             return image_array

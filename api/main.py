@@ -34,7 +34,6 @@ def getRandomStreetviewImageWithPrediction():
 
     # Run the image through the model
     model_predictions = prediction_service.predict(image_path)
-    print(model_predictions)
 
     # Return the image path
     return JSONResponse(content={

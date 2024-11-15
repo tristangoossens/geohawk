@@ -1,0 +1,6 @@
+numpy
+pillow
+fastapi
+uvicorn
+tensorflow
+selenium==4.18.1

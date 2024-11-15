@@ -1,0 +1,29 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/app
+    environment:
+      - ENV=development
+    networks:
+      - geohawknetwork
+  ui:
+    build:
+      context: ./website
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./website:/app
+    environment:
+      - NODE_ENV=development
+    networks:
+      - geohawknetwork
+
+networks:
+  geohawknetwork:
+    driver: bridge
