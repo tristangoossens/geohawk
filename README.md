@@ -1,6 +1,7 @@
 <div align="center">
   <img src="./assets/logo.png" />
   <h1><b>GeoHawk</b></h1>
+  <small>An interactive game to demonstrate a Convolutional Neural Network's ability to predict the geolocation of a Google Street View image.</small>
 </div>
 
 ## **Description**
@@ -19,7 +20,7 @@ To install the project, you need to have [Docker](https://www.docker.com) instal
 docker-compose up --build
 ```
 
-> Navigate to `http://localhost:4200` to play against the model.
+> Navigate to `http://localhost:4200` to play against the model.  
 > API Docs are available at `http://localhost:8000/docs`
 
 ## **TODO**
