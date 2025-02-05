@@ -1,0 +1,17 @@
+name: geohawk-v1
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - ipykernel
+  - pip
+  - pip:
+    - matplotlib
+    - pandas
+    - geopandas
+    - geodatasets
+    - numpy
+    - seaborn
+    - pillow
+    - tensorflow
+    - scikit-learn

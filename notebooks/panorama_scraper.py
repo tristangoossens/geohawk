@@ -20,7 +20,11 @@ class ImageScrapeService:
 
     def __init__(self):
         self.chrome_options = Options()
-        self.chrome_options.add_argument("--start-maximized")
+        self.chrome_options.add_argument('--disable-gpu')
+        self.chrome_options.add_argument('--no-sandbox')
+        self.chrome_options.add_argument('--disable-dev-shm-usage')
+        self.chrome_options.add_argument('--headless')
+        self.chrome_options.add_argument("--window-size=1920,1080")
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
         self.chrome_options.add_argument(f'user-agent={user_agent}')
 
@@ -86,7 +90,7 @@ class ImageScrapeService:
 
         return latitude, longitude
 
-    def _rotate_view(self, hold_time=0.6):
+    def _rotate_view(self, hold_time=0.41):
         """Private function to rotate the Street View image by holding the right arrow key."""
         actions = ActionChains(self._driver)
 
@@ -154,9 +158,9 @@ class ImageScrapeService:
 # Usage
 service = ImageScrapeService()
 
-for i in range(1000, 5000):
-    # Renew the service every 50 images
-    if i % 50 == 0:
+for i in range(10000, 10000):
+    # Renew the service every 30 images
+    if i % 30 == 0:
         service = ImageScrapeService()
 
     latitude, longitude, panorama = service.get_panorama_image()
